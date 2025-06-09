@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enjoy Your Food</title>
+  <link rel="stylesheet" href="css/keranjang-mie-ayam.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="app-container">
+      <header class="header">
+        <div class="header-content">
+          <div class="promo-text">
+            <h1>Buat Pesanan Pertama Anda Dan Dapatkan <span>50% Off</span></h1>
+            <button class="order-btn small">Order Sekarang</button>
+          </div>
+          <div class="food-image">
+            <img src="https://images.pexels.com/photos/723198/pexels-photo-723198.jpeg" alt="Nasi Goreng">
+          </div>
+        </div>
+
+
+        <div class="search-container">
+          <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Mau Mamam Apa?">
+          </div>
+        </div>
+      </header>
+
+      <section class="order-summary">
+        <h2>Jumlah Pesanan = 1</h2>
+
+        <div class="food-card">
+          <div class="food-image">
+            <img src="gambar/mie ayam.jpeg" alt="Soto">
+          </div>
+          <div class="food-details">
+            <div class="food-header">
+              <h3>Mie Ayam</h3>
+              <span class="price">25K</span>
+            </div>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <span>5.0</span>
+            </div>
+            <p class="food-description">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur corrupti repudiandae deserunt
+              explicabo architecto ab.
+            </p>
+          </div>
+        </div>
+
+        <div class="delivery-address">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Alamat Pengiriman: JL. Maccini Sawah No 99</p>
+        </div>
+      </section>
+
+      <section class="checkout-section">
+        <div class="total-price">
+          <h3>RP. 25.000</h3>
+        </div>
+        <button class="checkout-btn" id="btnPesan">Pesan Sekarang</button>
+      </section>
+
+      <button class="profile-btn">
+        <i class="fas fa-user"></i>
+      </button>
+
+      <button class="settings-btn">
+        <i class="fas fa-cog"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-content">
+      <button class="close-btn" id="closePopup">&times;</button>
+      <h2>Pesanan Berhasil!</h2>
+      <p>Terima kasih telah memesan. Kami akan segera memproses pesanan Anda.</p>
+      <button class="ok-btn" id="okBtn">OK</button>
+    </div>
+  </div>
+
+  <script>
+    const btnPesan = document.getElementById('btnPesan');
+    const popup = document.getElementById('popup');
+    const closeBtn = document.getElementById('closePopup');
+    const okBtn = document.getElementById('okBtn');
+
+    // Saat tombol Pesan Sekarang diklik, tampilkan popup
+    btnPesan.addEventListener('click', () => {
+      popup.style.display = 'flex';
+    });
+
+    // Saat tombol tutup diklik, sembunyikan popup
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    // Saat tombol OK diklik, sembunyikan popup
+    okBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    // Jika klik di luar popup-content, popup juga ditutup
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>
