@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pesanan - Beautiful Order Form</title>
+  <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-container" id="orderForm">
+      <div class="form-header">
+        <div class="icon-container">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5M17 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0ZM9 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z" />
+          </svg>
+        </div>
+        <h1>Form Pesanan</h1>
+        <p>Lengkapi informasi pesanan Anda</p>
+      </div>
+
+      <div class="order-form">
+        <div class="form-group">
+          <label for="quantity">Jumlah Pesanan</label>
+          <div class="input-container">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+            <input type="number" id="quantity" name="quantity" placeholder="Masukkan jumlah" min="1">
+          </div>
+          <div class="error-message" id="quantityError"></div>
+        </div>
+
+        <!-- Recipient Name Field -->
+        <div class="form-group">
+          <label for="recipientName">Nama Penerima</label>
+          <div class="input-container">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <input type="text" id="recipientName" name="recipientName" placeholder="Nama lengkap penerima">
+          </div>
+          <div class="error-message" id="recipientNameError"></div>
+        </div>
+
+        <!-- Address Field -->
+        <div class="form-group">
+          <label for="address">Alamat Pengiriman</label>
+          <div class="input-container textarea-container">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <textarea id="address" name="address" placeholder="Masukkan alamat lengkap termasuk kode pos"
+              rows="4"></textarea>
+          </div>
+          <div class="error-message" id="addressError"></div>
+        </div>
+
+        <button class="submit-btn" id="btnPesan">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20,6 9,17 4,12" />
+          </svg>
+          <span class="btn-text">Konfirmasi Pesanan</span>
+        </button>
+      </div>
+
+      <!-- Footer -->
+      <div class="form-footer">
+        <p>Pastikan semua informasi sudah benar sebelum konfirmasi</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="popup-overlay" id="popup">
+    <div class="popup-content">
+      <button class="close-btn" id="closePopup">&times;</button>
+      <h2>Pesanan Berhasil!</h2>
+      <p>Terima kasih telah memesan. Kami akan segera memproses pesanan Anda.</p>
+      <button class="ok-btn" id="okBtn" onclick="location.href='halaman utama.html'">OK</button>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
